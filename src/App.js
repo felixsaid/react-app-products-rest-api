@@ -69,13 +69,20 @@ const App = () => {
             </p>
             <br />
             <hr /> <br />
-            <Product
-              product_name="Bananas"
-              product_price="200"
-              category="Fruits"
-              quantity_in_stock="10"
-              created_by="Lucy Nzili"
-            />
+            <div className="row text-center">
+              {products.map((product) => (
+                <Product
+                  product_name={product.productName}
+                  product_price={product.productPrice}
+                  category={product.category.categoryName}
+                  quantity_in_stock={product.quantityInStock}
+                  created_by={product.user.userName}
+                />
+              ))}
+            </div>
+            <br />
+            <hr />
+            <br />
           </div>
         </div>
       </div>
